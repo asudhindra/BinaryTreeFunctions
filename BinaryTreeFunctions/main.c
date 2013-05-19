@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "stack.h"
 
 typedef struct Node {
     int data;
@@ -76,6 +77,9 @@ int maxDepth(Node *root)
     }
 }
 
+/*
+ * Prints the nodes of a Binary Search Tree at a given level.
+ */
 void printLevel(Node *root, int level)
 {
     if(root == NULL)

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28458704174970330091FD64 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 28458703174970330091FD64 /* main.c */; };
 		28458706174970330091FD64 /* BinaryTreeFunctions.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28458705174970330091FD64 /* BinaryTreeFunctions.1 */; };
+		2845ADE6174976ED00551D6E /* stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 2845ADE5174976ED00551D6E /* stack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		28458700174970330091FD64 /* BinaryTreeFunctions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTreeFunctions; sourceTree = BUILT_PRODUCTS_DIR; };
 		28458703174970330091FD64 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		28458705174970330091FD64 /* BinaryTreeFunctions.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BinaryTreeFunctions.1; sourceTree = "<group>"; };
+		2845ADE41749769D00551D6E /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		2845ADE5174976ED00551D6E /* stack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stack.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 			children = (
 				28458703174970330091FD64 /* main.c */,
 				28458705174970330091FD64 /* BinaryTreeFunctions.1 */,
+				2845ADE41749769D00551D6E /* stack.h */,
+				2845ADE5174976ED00551D6E /* stack.c */,
 			);
 			path = BinaryTreeFunctions;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28458704174970330091FD64 /* main.c in Sources */,
+				2845ADE6174976ED00551D6E /* stack.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +222,7 @@
 				2845870B174970330091FD64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
