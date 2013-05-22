@@ -9,26 +9,32 @@
 #include <stdio.h>
 #include "stack.h"
 
-#define MAXSTACK 100
-#define EMPTYSTACK -1
-int top = EMPTYSTACK;
-char items[MAXSTACK];
-
-
-
-
-void push(char c) {
-    items[++top] = c;
+struct Stack* createStack(int size)
+{
+    struct Stack* stack = (struct Stack*) malloc(sizeof(struct Stack));
+    stack->size = size;
+    stack->top = -1;
+    stack->array =
+    (struct Node**) malloc(stack->size * sizeof(struct Node*));
+    return stack;
 }
 
-char pop() {
-    return items[top--];
+int isFull(struct Stack* stack)
+{  return stack->top - 1 == stack->size; }
+
+int isEmpty(struct Stack* stack)
+{  return stack->top == -1;  }
+
+void push(struct Stack* stack, struct Node* node)
+{
+    if (isFull(stack))
+        return;
+    stack->array[++stack->top] = node;
 }
 
-int full()  {
-    return top+1 == MAXSTACK;
-}
-
-int empty()  {
-    return top == EMPTYSTACK;
+struct Node* pop(struct Stack* stack)
+{
+    if (isEmpty(stack))
+        return NULL;
+    return stack->array[stack->top--];
 }

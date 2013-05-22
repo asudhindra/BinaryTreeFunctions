@@ -31,6 +31,7 @@
 		28458705174970330091FD64 /* BinaryTreeFunctions.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BinaryTreeFunctions.1; sourceTree = "<group>"; };
 		2845ADE41749769D00551D6E /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
 		2845ADE5174976ED00551D6E /* stack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stack.c; sourceTree = "<group>"; };
+		2845ADE71749B3BC00551D6E /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 				28458705174970330091FD64 /* BinaryTreeFunctions.1 */,
 				2845ADE41749769D00551D6E /* stack.h */,
 				2845ADE5174976ED00551D6E /* stack.c */,
+				2845ADE71749B3BC00551D6E /* main.h */,
 			);
 			path = BinaryTreeFunctions;
 			sourceTree = "<group>";
