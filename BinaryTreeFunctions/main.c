@@ -226,6 +226,55 @@ void iterativeInorderTraversal(Node *node)
     }
 }
 
+/*
+ * Finds the smallest value among the nodes of a BST.
+ */
+int findMinimum(Node *root)
+{
+    if(root == NULL)
+        return  -1;
+    Node *current = root;
+    while(current->left != NULL)
+        current = current->left;
+    return current->data;
+}
+
+/*
+ * This function returns the value of the inorder successor for a Binary Search Tree.
+ * Steps followed are as followed:
+ * (a) If right subtree of the node is not NULL, then the inorder successor is in the right subtree.
+ *     Perform the following: Go to the right subtree and return the minimum value in the right subtree.
+ * (b) If the right subtree is NULL, then the inorder successor is one of the ancestors. 
+ *     Traverse down the tree, if node->data > root->data then go right side, otherwise go to left side.
+ */
+int inorderSuccessor(Node * root, Node * node)
+{
+    if(root == NULL)
+        return - 1;
+    Node *successor = NULL;
+    if(node->right != NULL)
+        findMinimum(node->right);
+    while (root != NULL)
+    {
+        if(node->data > root->data)
+        {
+            root = root->right;
+        }
+        else if(node->data < root->data)
+        {
+            successor = root;
+            root = root->left;
+        }
+        else
+            break;
+    }
+    return successor->data;
+}
+
+/*
+ * This function returns the Lowest Common Ancestor for a Binary Search Tree. For a function that works
+ * for any given Binary Tree, look below.
+ */
 int lowestCommonAncestorBST(Node *head, int data1, int data2)
 {
     if(head == NULL)
@@ -236,6 +285,40 @@ int lowestCommonAncestorBST(Node *head, int data1, int data2)
         return lowestCommonAncestorBST(head->right, data1, data2);
     else
         return head->data;
+}
+
+/*
+ * Returns the Lowest Common Ancestor for any given Binary Tree.
+ * Explanation: http://leetcode.com/2011/07/lowest-common-ancestor-of-a-binary-tree-part-i.html
+ * Summary:If the root node data field matches either data1 or data2 then the root node is the LCA.
+ * Check the left subtree and the right subtrees if they contain the LCA.
+ * If both the left and right subtrees contain either data1 or data2, then the root node is the LCA.
+ * If either the left or the right subtrees contain data1 or data2, then the root node of that subtree is the LCA.
+ * Runtime complecity: O(n)? Each node seems to be evaluated only once.
+ */
+int lowestCommonAncestor(Node *root, int data1, int data2)
+{
+    //Invalid Tree, so return -1
+    if(root == NULL)
+        return -1;
+    
+    //If the value of the root node matches either data1 or data2, the root node is the LCA.
+    if(root->data == data1 || root->data == data2)
+        return root->data;
+    
+    //Check if the data1 and data2 values exist in the left and right subtrees.
+    int leftTreeContent = lowestCommonAncestor(root->left, data1, data2);
+    int rightTreeContent = lowestCommonAncestor(root->right, data1, data2);
+    
+    //If both the left and right subtrees contain data1 and data2, then the root node is the LCA.
+    if(leftTreeContent != -1 && rightTreeContent != -1)
+        return root->data;
+    //If only the left subtree contains the data1 and data2 nodes, then the left subtree contains the LCA.
+    if(leftTreeContent != -1)
+        return leftTreeContent;
+    else
+        //If only the right subtree contains the data1 and data2 nodes, then the right subtree contains the LCA.
+        return rightTreeContent;
 }
 
 
